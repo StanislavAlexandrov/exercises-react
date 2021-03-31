@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/exercises-react/static/css/main.8ea7b558.chunk.css",
-    "main.js": "/exercises-react/static/js/main.37956107.chunk.js",
-    "main.js.map": "/exercises-react/static/js/main.37956107.chunk.js.map",
-    "runtime-main.js": "/exercises-react/static/js/runtime-main.78709b72.js",
-    "runtime-main.js.map": "/exercises-react/static/js/runtime-main.78709b72.js.map",
-    "static/js/2.471d425d.chunk.js": "/exercises-react/static/js/2.471d425d.chunk.js",
-    "static/js/2.471d425d.chunk.js.map": "/exercises-react/static/js/2.471d425d.chunk.js.map",
-    "static/js/3.ebe3ef34.chunk.js": "/exercises-react/static/js/3.ebe3ef34.chunk.js",
-    "static/js/3.ebe3ef34.chunk.js.map": "/exercises-react/static/js/3.ebe3ef34.chunk.js.map",
+    "main.css": "/exercises-react/static/css/main.54d4e7e2.chunk.css",
+    "main.js": "/exercises-react/static/js/main.5381bd80.chunk.js",
+    "main.js.map": "/exercises-react/static/js/main.5381bd80.chunk.js.map",
+    "runtime-main.js": "/exercises-react/static/js/runtime-main.c8c1c7d0.js",
+    "runtime-main.js.map": "/exercises-react/static/js/runtime-main.c8c1c7d0.js.map",
+    "static/js/2.2d5b28de.chunk.js": "/exercises-react/static/js/2.2d5b28de.chunk.js",
+    "static/js/2.2d5b28de.chunk.js.map": "/exercises-react/static/js/2.2d5b28de.chunk.js.map",
+    "static/js/3.e64363a9.chunk.js": "/exercises-react/static/js/3.e64363a9.chunk.js",
+    "static/js/3.e64363a9.chunk.js.map": "/exercises-react/static/js/3.e64363a9.chunk.js.map",
     "index.html": "/exercises-react/index.html",
-    "static/css/main.8ea7b558.chunk.css.map": "/exercises-react/static/css/main.8ea7b558.chunk.css.map",
-    "static/js/2.471d425d.chunk.js.LICENSE.txt": "/exercises-react/static/js/2.471d425d.chunk.js.LICENSE.txt",
+    "static/css/main.54d4e7e2.chunk.css.map": "/exercises-react/static/css/main.54d4e7e2.chunk.css.map",
+    "static/js/2.2d5b28de.chunk.js.LICENSE.txt": "/exercises-react/static/js/2.2d5b28de.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/exercises-react/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.78709b72.js",
-    "static/js/2.471d425d.chunk.js",
-    "static/css/main.8ea7b558.chunk.css",
-    "static/js/main.37956107.chunk.js"
+    "static/js/runtime-main.c8c1c7d0.js",
+    "static/js/2.2d5b28de.chunk.js",
+    "static/css/main.54d4e7e2.chunk.css",
+    "static/js/main.5381bd80.chunk.js"
   ]
 }
