@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ExercisesReactExerciseComponent from './components/exercises-react-exercise';
+import Exercise from './components/exercise/exercise.component';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                 <div className="Exercise">
                     <ExercisesReactExerciseComponent />
                 </div>
+
                 <div className="twinkling"></div>
             </header>
         </div>

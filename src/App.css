@@ -61,6 +61,7 @@
     text-align: center;
     transition: all 0.2s;
     font-size: 1em;
+    outline: none;
 }
 
 .button:hover {
@@ -68,8 +69,10 @@
     background-color: #ffffff;
 }
 
-.button .wrong {
-    color: red;
+.button._error {
+    color: #fff;
+    background-color: #c62a2a;
+    border: 0.1em solid #c62a2a;
 }
 
 @media all and (max-width: 30em) {

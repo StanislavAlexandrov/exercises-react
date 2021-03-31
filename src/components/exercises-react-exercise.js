@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import exercisesReactSentences from '../data/exercises-react-sentences';
 import { testArray } from '../data/exercises-react-sentences';
 
 const shuffleArray = (array) => {
@@ -15,28 +14,6 @@ const ExercisesReactExerciseComponent = () => {
     const extractArray = Object.values(testArray)[sentenceNumber - 1]
         .allAnswers;
     shuffleArray(extractArray);
-
-    function handleSubmit(e) {
-        e.preventDefault();
-
-        if (sentenceNumber + 1 in exercisesReactSentences) {
-            if (
-                e.target.value ===
-                exercisesReactSentences[sentenceNumber].answer
-            ) {
-                updateSentenceNumber((i) => ++i);
-            }
-
-            if (
-                e.target.innerHTML ===
-                exercisesReactSentences[sentenceNumber].answer
-            ) {
-                updateSentenceNumber((i) => ++i);
-            }
-        } else {
-            updateSentenceNumber(1);
-        }
-    }
 
     function handleSubmitAlternative(e) {
         e.preventDefault();
@@ -59,25 +36,6 @@ const ExercisesReactExerciseComponent = () => {
 
     return (
         <>
-            <li className="todo stack-small">
-                <select onChange={handleSubmit}>
-                    <option value="grapefruit">Grapefruit</option>
-
-                    <option value="am">
-                        {exercisesReactSentences[sentenceNumber].answer}
-                    </option>
-                </select>
-            </li>
-            <button onClick={handleSubmit}>
-                {exercisesReactSentences[sentenceNumber].false1}
-            </button>
-            <button onClick={handleSubmit}>
-                {exercisesReactSentences[sentenceNumber].answer}
-            </button>
-            <button onClick={handleSubmit}>
-                {exercisesReactSentences[sentenceNumber].false2}
-            </button>
-            <h1>{exercisesReactSentences[sentenceNumber].sentence}</h1>
             <h1>Errors: {errorNumber} </h1>
             <h1>{testArray[sentenceNumber - 1].sentence}</h1>
 
