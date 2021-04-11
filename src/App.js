@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import ExercisesReactExerciseComponent from './components/exercises-react-exercise';
 import Exercise from './components/exercise/exercise.component';
+import DuplicateExercise from './components/exercise/duplicate-exercise.component';
 
 function App() {
     return (
@@ -22,7 +24,7 @@ function App() {
     </a>*/}
 
                 <div className="Exercise">
-                    <ExercisesReactExerciseComponent />
+                    <Exercise></Exercise>
                 </div>
 
                 <div className="twinkling"></div>

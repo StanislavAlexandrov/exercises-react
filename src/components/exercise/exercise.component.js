@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { dataArray } from '../../data/exercises-react-sentences.js';
 
 const shuffleArray = (array) => {
@@ -13,17 +13,22 @@ const Exercise = () => {
     const [errorNumber, setErrorNumber] = useState(0);
 
     //why do we need a self invoke anon function here?
+    // everything that should be calculated should be in a function
 
-    const [currentStepData, setCurrentStepData] = useState(() => dataArray[0]);
-    console.log(currentStepData);
+    const [currentStepData, setCurrentStepData] = useState(() => {
+        shuffleArray(dataArray[0].allAnswers);
+        return dataArray[0];
+    });
 
     const onAnswerClick = (answer) => {
+        console.log(answer);
         if (answer === currentStepData.answer) {
             setCurrentStep((i) => {
                 const newStepNumber = ++i;
                 const stepsLength = dataArray.length - 1;
-
-                return newStepNumber > stepsLength ? 0 : stepsLength;
+                console.log(newStepNumber);
+                // replaced ? 0 : stepsLength with ? 0 : newStepNumber;
+                return newStepNumber > stepsLength ? 0 : newStepNumber;
             });
         } else {
             setCurrentStepData((data) => ({ ...data, error: answer }));
@@ -32,8 +37,16 @@ const Exercise = () => {
     };
 
     useEffect(() => {
+        shuffleArray(dataArray[currentStep].allAnswers);
+
         setCurrentStepData(dataArray[currentStep]);
     }, [currentStep]);
+    // this is a bit deeper than I originally thought. I need to memoize it?
+    // you shuffle the array and what happens next? set the state based on the reshuffle
+
+    // useEffect(() => shuffleArray(currentStepData.allAnswers), [currentStep]);
+
+    // you can use the index when mapping for keys
 
     return (
         <>
@@ -54,6 +67,9 @@ const Exercise = () => {
                     <>
                         <button
                             className={styleClass}
+                            //again, here if you don't use a self inv an f, you get 'too many rerenders'
+                            //an example of a closure
+
                             onClick={() => onAnswerClick(answer)}
                             key={answer.id}
                         >

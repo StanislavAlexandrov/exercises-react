@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { testArray } from '../data/exercises-react-sentences';
 
 const shuffleArray = (array) => {
@@ -36,8 +36,8 @@ const ExercisesReactExerciseComponent = () => {
 
     return (
         <>
-            <h1>Errors: {errorNumber} </h1>
-            <h1>{testArray[sentenceNumber - 1].sentence}</h1>
+            <h2>Errors: {errorNumber} </h2>
+            <h2>{testArray[sentenceNumber - 1].sentence}</h2>
 
             {extractArray.map((object, i) => (
                 <>
