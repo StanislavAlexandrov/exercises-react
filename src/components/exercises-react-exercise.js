@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { testArray } from '../data/exercises-react-sentences';
+import { dataArray } from '../data/exercises-react-sentences';
 
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -11,15 +11,15 @@ const shuffleArray = (array) => {
 const ExercisesReactExerciseComponent = () => {
     const [sentenceNumber, updateSentenceNumber] = useState(1);
     const [errorNumber, updateErrorNumber] = useState(0);
-    const extractArray = Object.values(testArray)[sentenceNumber - 1]
+    const extractArray = Object.values(dataArray)[sentenceNumber - 1]
         .allAnswers;
     shuffleArray(extractArray);
 
     function handleSubmitAlternative(e) {
         e.preventDefault();
 
-        if (sentenceNumber < testArray.length) {
-            if (e.target.innerHTML === testArray[sentenceNumber - 1].answer) {
+        if (sentenceNumber < dataArray.length) {
+            if (e.target.innerHTML === dataArray[sentenceNumber - 1].answer) {
                 updateSentenceNumber((i) => ++i);
                 shuffleArray(extractArray);
             } else {
@@ -37,7 +37,7 @@ const ExercisesReactExerciseComponent = () => {
     return (
         <>
             <h2>Errors: {errorNumber} </h2>
-            <h2>{testArray[sentenceNumber - 1].sentence}</h2>
+            <h2>{dataArray[sentenceNumber - 1].sentence}</h2>
 
             {extractArray.map((object, i) => (
                 <>
