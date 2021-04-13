@@ -11,7 +11,6 @@ export const dataArray = [
             '- / the',
             'a / -',
         ],
-        error: '',
     },
     {
         id: 2,

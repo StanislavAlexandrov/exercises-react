@@ -1,35 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { dataArray } from '../../data/exercises-react-sentences';
+import {StepDataType} from "./duplicate-exercise.model";
 
-export default function DuplicateExercise() {
-    type dataArrayElement = {
-        id: number;
-        sentence: string;
-        answer: string;
-        allAnswers: string[];
-        error?: string;
-    };
 
+type DuplicateExerciseProps = {};
+
+// type MyDuplicateExerciseProps = DuplicateExerciseProps & {
+//     a: 1
+// }
+//
+// let b: MyDuplicateExerciseProps = {a: 1}
+
+// #2
+// interface BaseModel {
+//     baseProp: string;
+// }
+//
+// interface MyBaseModel extends BaseModel{
+//     myProp: string;
+// }
+
+type ComplexStateType = {
+    prop?: ComplexStateType;
+    obj?: Record<string, ComplexStateType>;
+};
+
+const DuplicateExercise = memo<DuplicateExerciseProps>(() => {
+    const [complexState, setComplexState] = useState<ComplexStateType>({});
     const [currentStep, setCurrentStep] = useState(0);
-
     const [errorNumber, setErrorNumber] = useState(0);
-
-    const [currentStepData, setCurrentStepData] = useState(dataArray[0]);
-
-    useEffect((): ReturnType<any> => dataArray[currentStep], [currentStep]);
+    const [currentStepData, setCurrentStepData] = useState<StepDataType>(dataArray[0]);
 
     const onAnswerClick = (answer: string) => {
         if (answer === currentStepData.answer) {
-            setCurrentStep((i) => {
+            setCurrentStep(i => {
                 const newStepNumber = ++i;
                 const stepsLength = dataArray.length - 1;
                 return newStepNumber > stepsLength ? 0 : newStepNumber;
             });
         } else {
-            setErrorNumber((i) => ++i);
-            setCurrentStepData((data) => ({ ...data, error: answer }));
+            setErrorNumber(i => ++i);
+            setCurrentStepData(data => ({ ...data, error: answer }));
         }
     };
+
     useEffect(() => {
         setCurrentStepData(dataArray[currentStep]);
     }, [currentStep]);
@@ -42,11 +56,8 @@ export default function DuplicateExercise() {
             <h3>{dataArray[currentStep].sentence}</h3>
             <h4>Answers:</h4>
 
-            {currentStepData.allAnswers.map((answer) => {
-                const styleClass =
-                    currentStepData.error === answer
-                        ? 'button _error'
-                        : 'button';
+            {currentStepData.allAnswers.map(answer => {
+                const styleClass = currentStepData.error === answer ? 'button _error' : 'button';
                 return (
                     <button
                         onClick={() => onAnswerClick(answer)}
@@ -59,4 +70,6 @@ export default function DuplicateExercise() {
             })}
         </>
     );
-}
+});
+
+export default DuplicateExercise;
