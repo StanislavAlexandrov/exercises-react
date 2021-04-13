@@ -24,7 +24,7 @@ function App() {
     </a>*/}
 
                 <div className="Exercise">
-                    <Exercise></Exercise>
+                    <DuplicateExercise></DuplicateExercise>
                 </div>
 
                 <div className="twinkling"></div>

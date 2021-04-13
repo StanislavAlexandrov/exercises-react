@@ -21,12 +21,11 @@ const Exercise = () => {
     });
 
     const onAnswerClick = (answer) => {
-        console.log(answer);
         if (answer === currentStepData.answer) {
             setCurrentStep((i) => {
                 const newStepNumber = ++i;
                 const stepsLength = dataArray.length - 1;
-                console.log(newStepNumber);
+
                 // replaced ? 0 : stepsLength with ? 0 : newStepNumber;
                 return newStepNumber > stepsLength ? 0 : newStepNumber;
             });
